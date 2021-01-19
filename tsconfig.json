@@ -1,10 +1,13 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es6",
     "lib": [
       "dom",
       "dom.iterable",
-      "esnext"
+      "esnext",
+      "es2019",
+      "ES6",
+      "ScriptHost"
     ],
     "allowJs": true,
     "skipLibCheck": true,
