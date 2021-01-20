@@ -9,11 +9,12 @@ interface Props  {
 
 const Search: React.FC<Props> = ({searchquery, handleSearch, handleSubmit})=> {
     return(
-        <div>
+        <nav>
             <form onSubmit={handleSubmit}>
-                <input placeholder="Type here..."onChange={handleSearch}></input>
+                <label htmlFor="search"></label>
+                <input placeholder="Type here..."onChange={handleSearch} id="search"></input>
             </form>
-        </div>
+        </nav>
     )
 }
 

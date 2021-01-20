@@ -3,7 +3,7 @@ import Data from './games/lists.json'
 import Search from './components/Search'
 
 
-const App =() => {
+const App: React.FC=() => {
 
 //Setting our state with imported json  
 const [data] = useState(Data)
@@ -12,14 +12,6 @@ const [loopPosts, setLoopPosts] = useState<any>(Data)
 const [searchquery, setSearchQuery] = useState('')
 
 const [searchArray, setSearchArray] = useState<string[]>([])
-
-useEffect(()=>{
-
-  const flattenedArray = loopPosts.lists.flatMap((item: {items:any}) =>  item.items)
-  console.log('flatten',flattenedArray)
-
-
-},[])
 
 //console.log('loopposts',loopPosts)
 
@@ -66,9 +58,9 @@ return (
         <span key={query} className="search-list">{query}</span>
       )):null}
 
-      {/* Displaying json-data here: filter(itm => itm.title.includes('Cas'))*/}
+      {/* Displaying json-data here: */}
       <span className="list-title">{data.lists[0].title}</span>
-      {data.lists[0].items.map(game => (
+      {data.lists[0].items.filter(itm => itm.title.includes(searchquery)).map(game => (
         <div className="card" key={game.id}>
         <p><img src="./resources/roundel-copy-cat.png" className="game-img" alt="roundimage"/></p>
         <p className="game-title">{game.title}</p>
@@ -77,7 +69,7 @@ return (
 
       <span className="list-title">{data.lists[1].title}</span>
       
-      {data.lists[1].items.map(game => (
+      {data.lists[1].items.filter(itm => itm.title.includes(searchquery)).map(game => (
         <div className="card" key={game.id}>
         <p><img src="./resources/roundel-copy-cat.png" className="game-img" alt="roundimage"/></p>
         <p className="game-title">{game.title}</p>
@@ -86,7 +78,7 @@ return (
 
       <span className="list-title">{data.lists[2].title}</span>
       
-      {data.lists[2].items.map(game => (
+      {data.lists[2].items.filter(itm => itm.title.includes(searchquery)).map(game => (
         <div className="card" key={game.id}>
         <p><img src="./resources/roundel-copy-cat.png" className="game-img" alt="roundimage"/></p>
         <p className="game-title">{game.title}</p>
