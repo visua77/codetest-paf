@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,700&family=Noto+Sans+JP:wght@400;700&display=swap');
 
 
 * {
@@ -8,7 +9,7 @@
 }
 
 body {
-  font-family: Roboto, arial, sans-serif;
+  font-family: Noto Sans JP, arial, sans-serif;
   background-color: rgb(219, 219, 219);
 }
 
@@ -64,6 +65,27 @@ button {
   margin:auto;
 }
 
+.clear-btn {
+  padding:.5rem;
+  border-radius: 8px;
+  background-color: rgb(165, 68, 84);
+  color:white;
+  margin-left:1rem;
+  outline:none;
+  cursor: pointer;
+  transition: all ease-in-out .3s;
+}
+
+.clear-btn:hover {
+  padding:.6rem;
+  border-radius: 8px;
+  background-color: rgb(207, 156, 165);
+  color:white;
+  margin-left:1rem;
+  outline:none;
+  cursor: pointer;
+}
+
 .hr {
   width:100%;
   height:2px;
@@ -115,8 +137,10 @@ button {
 }
 
 .game-img {
-  border:4px solid black;
+  
   border-radius: 50%;
+  
+  box-shadow: inset 0px 0px 0px 10px white;
 }
 
 

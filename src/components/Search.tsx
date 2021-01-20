@@ -2,7 +2,6 @@ import React from 'react'
 
 interface Props  {
     searchquery:string;
-    //setSearches?:string;
     handleSearch:any;
     handleSubmit?:any;
 }
@@ -12,7 +11,7 @@ const Search: React.FC<Props> = ({searchquery, handleSearch, handleSubmit})=> {
         <nav>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="search"></label>
-                <input placeholder="Type here..."onChange={handleSearch} id="search"></input>
+                <input placeholder="Type here..."onChange={handleSearch} id="search" autoComplete="off"value={searchquery}></input>
             </form>
         </nav>
     )
