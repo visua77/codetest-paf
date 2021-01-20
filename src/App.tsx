@@ -15,21 +15,13 @@ const [searchArray, setSearchArray] = useState<string[]>([])
 
 useEffect(()=>{
 
-const fetchLoop = (page:number)=> {
-  
-    const fetchRes = data.lists[page]
-    setLoopPosts([...loopPosts.lists, fetchRes])
-    //setLoopPosts(prev => [...prev, fetchRes])
-  }
-  
-  [1,2,3].forEach(page => fetchLoop(page))
-  const test = loopPosts.lists.flat()
-  console.log('test',test)
+  const flattenedArray = loopPosts.lists.flatMap((item: {items:any}) =>  item.items)
+  console.log('flatten',flattenedArray)
 
 
 },[])
 
-console.log('loopposts',loopPosts)
+//console.log('loopposts',loopPosts)
 
 useEffect(()=> {
   const storage:any = localStorage.getItem('Searches')
@@ -43,9 +35,7 @@ useEffect(()=> {
 
 const handleSearch = (e: ChangeEvent<HTMLInputElement>)=>{
   const searchTerm = e.target.value
-  //let searchesArray:string[] = []
   setSearchQuery(searchTerm)
-  //searches.push(searchTerm)
   console.log(searchquery)
 }
 
@@ -53,7 +43,7 @@ const handleSubmit = (e: ChangeEvent<HTMLInputElement>)=> {
   e.preventDefault()
   searchArray.push(searchquery)
   localStorage.setItem('Searches',JSON.stringify(searchArray))
-  //searchArray.push(searchquery)
+
   //console.log(searchArray)
 }
 
@@ -76,7 +66,7 @@ return (
         <span key={query} className="search-list">{query}</span>
       )):null}
 
-      
+      {/* Displaying json-data here: filter(itm => itm.title.includes('Cas'))*/}
       <span className="list-title">{data.lists[0].title}</span>
       {data.lists[0].items.map(game => (
         <div className="card" key={game.id}>
