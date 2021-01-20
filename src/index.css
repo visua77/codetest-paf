@@ -31,6 +31,39 @@ input {
   padding:.8rem;
 }
 
+button {
+  border:none;
+}
+
+.search-list {
+  font-size: 1rem;;
+  margin:1rem;
+  background-color: silver;
+  color:white;
+  padding:.4rem;
+  border-radius: 8px;
+  transition: all ease-in-out .3s;
+  cursor: pointer;
+}
+
+.search-list:hover {
+  font-size: 1rem;;
+  margin:1rem;
+  background-color: rgb(165, 68, 84);
+  color:white;
+  padding:.6rem;
+  border-radius: 8px;
+}
+
+.search-history{
+  font-weight: 700;
+}
+
+.no-result {
+  display:flex;
+  margin:auto;
+}
+
 .hr {
   width:100%;
   height:2px;
@@ -86,13 +119,7 @@ input {
   border-radius: 50%;
 }
 
-.search-list {
-  margin:1rem;
-  background-color: silver;
-  color:white;
-  padding:.3rem;
-  border-radius: 8px;
-}
+
 
 
 @media (max-width:992px) {

@@ -2,15 +2,11 @@ import React,{ChangeEvent, useState, useEffect} from 'react'
 import Data from './games/lists.json'
 import Search from './components/Search'
 
-
 const App: React.FC=() => {
 
-//Setting our state with imported json  
+//Setting state here 
 const [data] = useState(Data)
-
-const [loopPosts, setLoopPosts] = useState<any>(Data)
 const [searchquery, setSearchQuery] = useState('')
-
 const [searchArray, setSearchArray] = useState<string[]>([])
 
 //console.log('loopposts',loopPosts)
@@ -52,14 +48,17 @@ return (
 
       <p className="description">{data.description}</p>
 
+      {!data.lists[0].items.filter(itm => itm.title.includes(searchquery)).length ? <div className="wrapper"><h2 className="no-result">No results found!</h2></div>:null}
+
       {/* Displaying the search-history here: */}
-      {searchArray.length ? <span>No of items: {searchArray.length}</span>:null}
-      {searchArray.length ? searchArray.slice(0,10).map(query=>(
-        <span key={query} className="search-list">{query}</span>
+      {searchArray.length ? <span className="search-history">Search history:</span>:null}
+      {searchArray.length ? searchArray.slice(Math.max(searchArray.length -10, 0)).map(query=>(
+        <button key={Math.random()} className="search-list" onClick={()=> setSearchQuery(query)}>{query}</button>
       )):null}
 
       {/* Displaying json-data here: */}
-      <span className="list-title">{data.lists[0].title}</span>
+      
+      {data.lists[0].items.filter(itm => itm.title.includes(searchquery)).length ? <span className="list-title">{data.lists[0].title}</span>:null}
       {data.lists[0].items.filter(itm => itm.title.includes(searchquery)).map(game => (
         <div className="card" key={game.id}>
         <p><img src="./resources/roundel-copy-cat.png" className="game-img" alt="roundimage"/></p>
@@ -67,8 +66,8 @@ return (
         </div>
       ))}
 
-      <span className="list-title">{data.lists[1].title}</span>
-      
+      {/* Displaying json-data here: */}  
+      {data.lists[1].items.filter(itm => itm.title.includes(searchquery)).length ? <span className="list-title">{data.lists[1].title}</span>:null}
       {data.lists[1].items.filter(itm => itm.title.includes(searchquery)).map(game => (
         <div className="card" key={game.id}>
         <p><img src="./resources/roundel-copy-cat.png" className="game-img" alt="roundimage"/></p>
@@ -76,8 +75,8 @@ return (
         </div>
       ))}
 
-      <span className="list-title">{data.lists[2].title}</span>
-      
+      {/* Displaying json-data here: */}
+      {data.lists[0].items.filter(itm => itm.title.includes(searchquery)).length ? <span className="list-title">{data.lists[2].title}</span>:null}
       {data.lists[2].items.filter(itm => itm.title.includes(searchquery)).map(game => (
         <div className="card" key={game.id}>
         <p><img src="./resources/roundel-copy-cat.png" className="game-img" alt="roundimage"/></p>
