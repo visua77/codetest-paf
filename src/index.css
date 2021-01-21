@@ -20,16 +20,31 @@ header {
   justify-content: space-between;
 }
 
+main {
+  width:100%;
+  max-width: 1200px;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
 h1 {
   font-size: 3rem;
   margin-bottom: .5rem;
 }
 
 input {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   border-radius: 8px;
   border:0;
   padding:.8rem;
+}
+
+input:focus {
+  border: none;
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 189, 177, 0.6);
 }
 
 button {
@@ -52,7 +67,7 @@ button {
   margin:1rem;
   background-color: rgb(165, 68, 84);
   color:white;
-  padding:.6rem;
+  padding:.5rem;
   border-radius: 8px;
 }
 
@@ -66,7 +81,8 @@ button {
 }
 
 .clear-btn {
-  padding:.5rem;
+  font-size: 1rem;
+  padding:.4rem;
   border-radius: 8px;
   background-color: rgb(165, 68, 84);
   color:white;
@@ -77,10 +93,11 @@ button {
 }
 
 .clear-btn:hover {
-  padding:.6rem;
+  font-size: 1rem;
+  padding:.5rem;
   border-radius: 8px;
   background-color: rgb(207, 156, 165);
-  color:white;
+  color:rgb(80, 80, 80);
   margin-left:1rem;
   outline:none;
   cursor: pointer;
@@ -137,14 +154,9 @@ button {
 }
 
 .game-img {
-  
   border-radius: 50%;
-  
   box-shadow: inset 0px 0px 0px 10px white;
 }
-
-
-
 
 @media (max-width:992px) {
 
