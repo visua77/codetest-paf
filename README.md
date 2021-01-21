@@ -1,5 +1,10 @@
 # Paf frontend exercise
 
+Deployed version here: https://codetest-paf-frontend.netlify.app/
+
+Note: If I were to work on a production-build, I would of course put the "content" of
+app in its own component like <Results /> or similiar.
+
 ## Objective
 
 Translate the provided [design mocks](./design/) into a working solution with HTML, CSS, Typescript, and React.  
