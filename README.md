@@ -3,7 +3,7 @@
 Deployed version here: https://codetest-paf-frontend.netlify.app/
 
 Note: If I were to work on a production-build, I would of course put the "content" of
-app in its own component like <Results /> or similiar.
+app in its own component like 'Results' or similiar.
 
 ## Objective
 
