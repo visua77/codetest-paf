@@ -170,6 +170,7 @@ button {
   h1 {
     font-size: 2rem;
     margin-bottom: .5rem;
+    line-height: 2rem;
   }
 
   input {
@@ -177,7 +178,13 @@ button {
     border-radius: 8px;
     border:0;
     padding:.4rem;
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
+  }
+
+  input:focus {
+    border: none;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 189, 177, 0.6);
   }
 
   .wrapper {
@@ -202,6 +209,46 @@ button {
     margin-bottom:.5rem;
     padding:.5rem;
   
+  }
+
+  .search-list {
+    font-size: 1rem;;
+    margin:.5rem;
+    background-color: silver;
+    color:white;
+    padding:.4rem;
+    border-radius: 8px;
+    transition: all ease-in-out .3s;
+    cursor: pointer;
+  }
+  
+  .search-list:hover {
+    font-size: 1rem;;
+
+    background-color: rgb(165, 68, 84);
+    color:white;
+    padding:.5rem;
+    border-radius: 8px;
+  }
+
+  .clear-btn {
+    font-size: 1rem;
+    padding:.4rem;
+    border-radius: 8px;
+    background-color: rgb(165, 68, 84);
+    color:white;
+    margin-left:1rem;
+    margin-top: .5rem;
+    margin-bottom:1rem;
+    outline:none;
+    cursor: pointer;
+    transition: all ease-in-out .3s;
+  }
+
+  .description {
+    width:100%;
+    margin-top: .5rem;
+    margin-bottom: 1rem;
   }
 
   .game-img{
